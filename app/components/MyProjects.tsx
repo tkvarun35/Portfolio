@@ -1,0 +1,53 @@
+"use client";
+import { useEffect, useState } from "react";
+import { edu_tas } from "../fonts/fonts";
+import ProjectCard from "./ProjectCard";
+import { collection, getDocs, orderBy, query } from "firebase/firestore";
+import { db } from "@/firebase/config";
+
+interface ProjectProps {
+  id?: string | number;
+  projectName?: string;
+  smallDescrpition?: string;
+  description?: string;
+  deployedLink?: string;
+  codeLink?: string;
+  imageLink?: string;
+  priority?: string | number;
+}
+
+function MyProjects() {
+  const projectsCollectionRef = collection(db, "Project");
+  const [projects, setProjects] = useState<[ProjectProps]>([{}]);
+
+  useEffect(() => {
+    const getProjects = async () => {
+      // const data = await getDocs(projectsCollectionRef);
+      const q = query(projectsCollectionRef, orderBy("priority"));
+      const data = await getDocs(q);
+
+      // console.log(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
+      //@ts-ignore
+      setProjects(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
+    };
+    getProjects();
+  }, []);
+  return (
+    <>
+      <div className="p-10 flex justify-center space-y-0 ">
+        <div className={edu_tas.className}>
+          <p className="text-3xl font-bold "> My Projects</p>
+        </div>
+      </div>
+      <div className="flex  md:justify-center pb-2 ">
+        <div className="flex flex-col  flex-wrap justify-center  md:flex-row md:max-w-screen-xl md:space-x-2 ">
+          {projects.map((project) => {
+            return <ProjectCard key={project.id} {...project} />;
+          })}
+        </div>
+      </div>
+    </>
+  );
+}
+
+export default MyProjects;
