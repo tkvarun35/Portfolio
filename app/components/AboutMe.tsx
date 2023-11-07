@@ -14,9 +14,9 @@ function AboutMe() {
       </div>
       <div className="max-w-3xl flex justify-center text-center m-auto">
         <p className="">
-          Hello, I'm {data.name}, a passionate computer science enthusiast based
-          in India, currently pursuing my Bachelor's degree in Computer Science
-          from AKTU University.
+          Hello, I&apos;m {data.name}, a passionate computer science enthusiast
+          based in India, currently pursuing my Bachelor&apos;s degree in
+          Computer Science from AKTU University.
         </p>
       </div>
       <div className="pb-4">
@@ -46,9 +46,9 @@ function AboutMe() {
           <p className="">
             <b> Frontend and Backend Developer | Team ERP@KIET</b>
             <br />
-            I actively contributed to the development of our college's in-house
-            ERP system, managing various modules like Marks Monitoring System
-            and Hostel Management.
+            I actively contributed to the development of our college&apos;s
+            in-house ERP system, managing various modules like Marks Monitoring
+            System and Hostel Management.
             <br />
             <br />
             <b> Internship Highlights</b>
@@ -86,7 +86,8 @@ function AboutMe() {
             <ul className="list-disc">
               <li>
                 Enhanced the user interface and functionality of
-                Innotech.kiet.edu, our college's technical festival website.
+                Innotech.kiet.edu, our college&apos;s technical festival
+                website.
               </li>
               <li>
                 Currently serving as the Management Head in Team ERP, leading
