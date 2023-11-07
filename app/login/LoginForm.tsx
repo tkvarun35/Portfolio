@@ -30,8 +30,6 @@ export function InputForm() {
   }, []);
 
   const handleSubmit = () => {
-    console.log(email, password);
-
     const auth = getAuth;
     signInWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {

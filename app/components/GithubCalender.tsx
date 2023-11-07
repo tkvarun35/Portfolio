@@ -1,6 +1,7 @@
 "use client";
 import GitHubCalendar from "react-github-calendar";
 import { edu_tas } from "../fonts/fonts";
+import data from "@/Details.json";
 
 function GithubCalender() {
   return (
@@ -10,7 +11,7 @@ function GithubCalender() {
           My Github Contributions ⭐️
         </p>
         <div className="flex justify-center">
-          <GitHubCalendar username="tkvarun35" colorScheme="light" />
+          <GitHubCalendar username={data.githubUsername} colorScheme="light" />
         </div>
       </div>
     </div>

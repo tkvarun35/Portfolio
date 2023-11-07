@@ -1,5 +1,6 @@
 "use client";
 import { TypeAnimation } from "react-type-animation";
+import data from "@/Details.json";
 
 function AnimationText() {
   return (
@@ -7,9 +8,9 @@ function AnimationText() {
       <TypeAnimation
         sequence={[
           // Same substring at the start will only be typed out once, initially
-          "Your idea, my code – a perfect match.",
+          data.dashBoardText[0],
           1000,
-          "And yes I also hate spaghetti.",
+          data.dashBoardText[1],
           1000,
         ]}
         wrapper="span"

@@ -1,7 +1,12 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
-    domains: ["firebasestorage.googleapis.com"],
+    dangerouslyAllowSVG: true,
+    domains: [
+      "firebasestorage.googleapis.com",
+      "leetcard.jacoblin.cool",
+      "github-readme-stats.vercel.app",
+    ],
   },
 };
 

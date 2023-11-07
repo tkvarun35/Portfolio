@@ -1,7 +1,7 @@
 import React from "react";
 import { caveat } from "../fonts/fonts";
 import AnimationText from "./AnimationText";
-import GithubCalender from "./GithubCalender";
+import data from "@/Details.json";
 
 function Dashboard() {
   return (
@@ -9,7 +9,7 @@ function Dashboard() {
       <div className={caveat.className}>
         <div className="text-xl md:text-4xl flex flex-col  gap-1 py-2">
           <p className="flex justify-center">Hi!</p>
-          <p className="flex justify-center">My name is Varun Tiwari..</p>
+          <p className="flex justify-center">My name is {data.name}..</p>
         </div>
         <p className="text-sm md:text-4xl ">
           <AnimationText />

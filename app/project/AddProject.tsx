@@ -30,13 +30,9 @@ function AddProject() {
 
   const handleSubmit = async () => {
     const uploadDoc = async () => {
-      console.log("Upload initiated");
-      console.log(data);
       const dbRef = collection(db, "Project");
       addDoc(dbRef, data)
         .then((e) => {
-          console.log(e);
-
           toast.success("Data Uploaded");
           setData({
             priority: "",
@@ -50,7 +46,6 @@ function AddProject() {
 
           inputRef.current!.value = "";
 
-          console.log(data);
           setImageUploaded(false);
         })
         .catch((e) => {
@@ -62,16 +57,12 @@ function AddProject() {
   const uploadImage = async () => {
     if (imageFile) {
       const storageRef = ref(storage, `images/${imageFile?.name + uuidv4()}`);
-      console.log("Img file is uploaded");
 
       await uploadBytes(storageRef, imageFile as Blob).then((snapshot) => {
-        console.log(snapshot);
-
-        console.log("Uploaded a blob or file!");
         getDownloadURL(storageRef)
           .then((url) => {
             // Insert url into an <img> tag to "download"
-            console.log(url);
+
             setData({ ...data, imageLink: url });
             toast.success("Image Uploaded");
             setImageUploaded(true);

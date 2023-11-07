@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { BsGithub, BsLinkedin } from "react-icons/bs";
 import { FaSquareXTwitter } from "react-icons/fa6";
 import { BiLogoGitlab } from "react-icons/bi";
+import data from "@/Details.json";
 
 function LinkBar() {
   const Links = {
@@ -10,25 +11,25 @@ function LinkBar() {
       id: 1,
       name: "Github",
       logo: "BsGithub",
-      link: "https://github.com/tkvarun35/",
+      link: data.githubLink,
     },
     Linkedin: {
       id: 2,
       name: "LinkedIn",
       logo: "BsLinkedin",
-      link: "https://www.linkedin.com/in/varun-kumar-tiwari-246981204/",
+      link: data.linkedInLink,
     },
     Twitter: {
       id: 3,
       name: "Twitter",
       logo: "FaSquareXTwitter",
-      link: "https://twitter.com/iamvarunkt",
+      link: data.twitterLink,
     },
     Gitlab: {
       id: 4,
       name: "Gitlab",
       logo: "BiLogoGitlab",
-      link: "https://gitlab.com/tkvarun35",
+      link: data.gitlabLink,
     },
   };
   return (

@@ -34,15 +34,15 @@ function MyProjects() {
   }, []);
   return (
     <>
-      <div className="p-10 flex justify-center space-y-0 ">
+      <div className="p-10 flex justify-center space-y-0 " id="project">
         <div className={edu_tas.className}>
           <p className="text-3xl font-bold "> My Projects</p>
         </div>
       </div>
       <div className="flex  md:justify-center pb-2 ">
         <div className="flex flex-col  flex-wrap justify-center  md:flex-row md:max-w-screen-xl md:space-x-2 ">
-          {projects.map((project) => {
-            return <ProjectCard key={project.id} {...project} />;
+          {projects.map((project, id) => {
+            return <ProjectCard key={id} {...project} />;
           })}
         </div>
       </div>

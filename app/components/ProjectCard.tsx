@@ -15,6 +15,7 @@ import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import Image from "next/image";
 import { useLayoutEffect, useRef, useState } from "react";
+import { HiExternalLink } from "react-icons/hi";
 
 // import img from "/";
 
@@ -55,15 +56,24 @@ function ProjectCard(project: ProjectCardProps) {
   });
   return (
     <div className="flex  justify-center p-3 md:w-4/12 ">
-      <Card className="flex flex-col " key={project.id}>
+      <Card className="flex flex-col ">
         {project.imageLink && (
-          <Image
-            src={project.imageLink}
-            alt="Image"
-            className=" object-fill  w-full h-36 blur-[0.5px] rounded"
-            width={500}
-            height={100}
-          />
+          <Link
+            href={project.deployedLink || project.codeLink || ""}
+            target="_blank"
+            className="m-1 relative group"
+          >
+            <Image
+              src={project.imageLink}
+              alt="Image"
+              className=" object-fill  w-full h-36 blur-[0.5px] rounded hover:blur-[1.5px]"
+              width={500}
+              height={100}
+              quality={75}
+              priority={true}
+            />
+            <HiExternalLink className=" absolute top-0 right-0 z-10  hidden group-hover:block text-3xl text-slate-800 bg-slate-300	rounded p-1" />
+          </Link>
         )}
         <CardHeader>
           <CardTitle>{project.projectName}</CardTitle>

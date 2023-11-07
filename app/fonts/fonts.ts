@@ -1,4 +1,4 @@
-import { Caveat } from "next/font/google";
+import { Caveat, Satisfy } from "next/font/google";
 import { Exo_2 } from "next/font/google";
 import { Edu_TAS_Beginner } from "next/font/google";
 
@@ -17,3 +17,11 @@ export const caveat = Caveat({
     display: 'swap',
     weight:"400"
   })
+
+  export const satisfya = Satisfy({
+    subsets: ['latin'],
+    display: 'swap',
+    weight:"400"
+  })
+
+  
