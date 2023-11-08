@@ -131,14 +131,14 @@ function AboutMe() {
               width={0}
               height={0}
               className="rounded-2xl"
-              style={{ width: "50%", height: "auto" }}
+              style={{ width: "100%", height: "auto" }}
             />
             <Image
               src={`https://github-readme-stats.vercel.app/api/top-langs/?username=${githubUsername}&layout=compact`}
               alt="Github Lang Stats"
               width={0}
               height={0}
-              style={{ width: "50%", height: "auto" }}
+              style={{ width: "100%", height: "auto" }}
               className="rounded-2xl"
             />
           </span>

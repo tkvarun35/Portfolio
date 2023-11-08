@@ -8,7 +8,7 @@ import Footer from "../components/Footer";
 
 function Portfolio() {
   return (
-    <div className="flex-col space-y-10">
+    <div className="flex-col space-y-10 overflow-hidden ">
       <Dashboard />
       <GithubCalender />
       <LinkBar />
