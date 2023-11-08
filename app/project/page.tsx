@@ -24,11 +24,7 @@ function Project() {
     }
   });
 
-  return (
-    <div>
-      <AddProject />
-    </div>
-  );
+  return <AddProject />;
 }
 
 export default Project;

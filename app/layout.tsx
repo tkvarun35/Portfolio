@@ -3,6 +3,8 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import Navbar from "./components/Navbar";
 import data from "@/Details.json";
+import Providers from "./providers";
+import Footer from "./components/Footer";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -17,13 +19,15 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
-      <body className="w-full">
-        <div className={inter.className}>
+    <html lang="en" suppressHydrationWarning>
+      <body className={`${inter.className} w-full`}>
+        <Providers>
           <Navbar />
-
           {children}
-        </div>
+          <footer>
+            <Footer />
+          </footer>
+        </Providers>
       </body>
     </html>
   );

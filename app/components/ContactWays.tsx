@@ -23,7 +23,7 @@ function ContactWays() {
         <a
           href={`https://wa.me/${mobileNo}`}
           target="_blank"
-          className="text-blue-900 flex "
+          className="text-blue-900 flex dark:text-blue-300"
         >
           <BsWhatsapp className="align-middle my-1 mx-2" /> WhatsApp Me
         </a>

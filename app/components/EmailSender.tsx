@@ -38,7 +38,7 @@ export const EmailSender = () => {
       <Toaster />
       <form ref={form} onSubmit={sendEmail}>
         <input
-          className="p-4 w-full m-2 bg-gray-100 rounded-md border-0 outline-none"
+          className="p-4 w-full m-2 bg-gray-100 rounded-xl border-0 outline-none dark:text-slate-800"
           placeholder="Your Name"
           name="from_name"
           type="text"
@@ -46,7 +46,7 @@ export const EmailSender = () => {
           required
         />
         <input
-          className="p-4 m-2 w-full border-0 bg-gray-100 rounded-md outline-none"
+          className="p-4 m-2 w-full border-0 bg-gray-100 rounded-xl outline-none dark:text-slate-800"
           placeholder="Your Email"
           name="reply_to"
           type="email"
@@ -54,7 +54,7 @@ export const EmailSender = () => {
           required
         />
         <textarea
-          className="p-4 m-2 w-full max-h-full border-0 bg-gray-100 rounded-md outline-none mb-4"
+          className="p-4 m-2 w-full max-h-full border-0 bg-gray-100 rounded-xl outline-none mb-4 dark:text-slate-800"
           placeholder="What's on your mind"
           name="message"
           disabled={isLoading}
@@ -64,7 +64,7 @@ export const EmailSender = () => {
         <div className="flex justify-center">
           <Button
             role="button"
-            className="relative w-36 gradient-border m-1  cursor-pointer rounded-xl flex items-center justify-center bg-black hover:bg-black hover:text-white opacity-80 hover:opacity-100 text-white disabled:cursor-not-allowed disabled:opacity-50 transition-all duration-200"
+            className="relative w-36 gradient-border m-1  cursor-pointer rounded-xl flex items-center justify-center bg-black hover:bg-black dark:bg-gray-600 dark:text-white dark:hover:bg-gray-700 hover:text-white  text-white disabled:cursor-not-allowed disabled:opacity-50 "
             type="submit"
             disabled={isLoading}
           >

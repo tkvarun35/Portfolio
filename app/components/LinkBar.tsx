@@ -40,7 +40,7 @@ function LinkBar() {
         key={Links["Github"].id}
         className="flex justify-center"
       >
-        <Button className="bg-slate-700   ">
+        <Button className="w-32 rounded-xl dark:hover:bg-slate-800">
           <BsGithub className="mr-2 h-4 w-4" /> {Links["Github"].name}
         </Button>
       </a>
@@ -50,7 +50,7 @@ function LinkBar() {
         key={Links["Linkedin"].id}
         className="flex justify-center"
       >
-        <Button className="bg-slate-700">
+        <Button className="w-32 rounded-xl dark:hover:bg-slate-800">
           <BsLinkedin className="mr-2 h-4 w-4" /> {Links["Linkedin"].name}
         </Button>
       </a>
@@ -60,7 +60,7 @@ function LinkBar() {
         key={Links["Twitter"].id}
         className="flex justify-center"
       >
-        <Button className="bg-slate-700">
+        <Button className="w-32 rounded-xl dark:hover:bg-slate-800">
           <FaSquareXTwitter className="mr-2 h-4 w-4" /> {Links["Twitter"].name}
         </Button>
       </a>
@@ -70,7 +70,7 @@ function LinkBar() {
         key={Links["Gitlab"].id}
         className="flex justify-center"
       >
-        <Button className="bg-slate-700">
+        <Button className="w-32 rounded-xl dark:hover:bg-slate-800">
           <BiLogoGitlab className="mr-2 h-4 w-4" /> {Links["Gitlab"].name}
         </Button>
       </a>

@@ -23,7 +23,7 @@ function Navbar() {
   ];
 
   return (
-    <nav className="bg-white border-gray-200 w-full sticky top-0 z-50">
+    <nav className="bg-white dark:bg-[#121212] border-gray-200 w-full sticky top-0 z-50">
       <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
         <Link
           href="/"
@@ -39,13 +39,16 @@ function Navbar() {
         </Link>
 
         <div className={exo_2.className}>
-          <div className="hidden w-full md:block md:w-auto" id="navbar-default">
-            <ul className="font-medium flex flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:border-0 md:bg-white text-black">
+          <div
+            className="hidden w-full  md:block md:w-auto"
+            id="navbar-default"
+          >
+            <ul className="font-medium flex flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 dark:bg-[#121212] dark:text-gray-50 md:flex-row md:space-x-8 md:mt-0 md:border-0 md:bg-white text-black">
               {NavOptions.map((item) => (
                 <Link
                   key={item.id}
                   href={item.link || item.scrollTo || ""}
-                  className="hover:underline hover:text-red-950"
+                  className="hover:underline hover:text-red-950 dark:hover:text-red-200"
                 >
                   {item.name}
                 </Link>

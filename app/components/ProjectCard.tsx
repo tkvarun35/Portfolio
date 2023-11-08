@@ -56,7 +56,7 @@ function ProjectCard(project: ProjectCardProps) {
   });
   return (
     <div className="flex  justify-center p-3 md:w-4/12 ">
-      <Card className="flex flex-col ">
+      <Card className="flex flex-col rounded-xl dark:border-[0.1px]">
         {project.imageLink && (
           <Link
             href={project.deployedLink || project.codeLink || ""}
@@ -91,7 +91,7 @@ function ProjectCard(project: ProjectCardProps) {
           {isTruncated && !isReadingMore && (
             <button
               onClick={() => setIsReadingMore(true)}
-              className="underline mt-1 bg-slate-100 rounded-md"
+              className="underline mt-1 bg-slate-100 rounded-md dark:bg-[#121212] dark:text-cyan-100"
             >
               Read more
             </button>
@@ -99,7 +99,7 @@ function ProjectCard(project: ProjectCardProps) {
           {isTruncated && isReadingMore && (
             <button
               onClick={() => setIsReadingMore(false)}
-              className="underline mt-1  bg-slate-100 rounded-md"
+              className="underline mt-1  bg-slate-100 rounded-md dark:bg-[#121212] dark:text-cyan-100"
             >
               Read less
             </button>
@@ -108,7 +108,7 @@ function ProjectCard(project: ProjectCardProps) {
         <CardFooter className=" relative mt-auto flex flex-wrap  justify-center">
           {project.deployedLink && (
             <Link href={project.deployedLink} target="_blank" className="m-1 ">
-              <Button className="bg-green-600 hover:bg-green-700 w-40">
+              <Button className="bg-green-600 dark:bg-teal-600 dark:hover:bg-teal-700 hover:bg-green-700 w-40 rounded-xl">
                 <BiLinkExternal className="m-1" />
                 Visit Project
               </Button>
@@ -116,7 +116,7 @@ function ProjectCard(project: ProjectCardProps) {
           )}
           {project.codeLink && (
             <Link href={project.codeLink} target="_blank" className="m-1 ">
-              <Button className="w-40">
+              <Button className="w-40 rounded-xl">
                 <FaCode className="m-1" />
                 Visit Code
               </Button>

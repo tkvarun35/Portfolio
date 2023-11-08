@@ -25,7 +25,8 @@ function AddProject() {
   const inputRef = useRef<HTMLInputElement>(null);
   const [data, setData] = useState<dataProps>({});
   const [imageFile, setImageFile] = useState<File>();
-  const [imageUploaded, setImageUploaded] = useState<boolean>(false);
+  const [imageUploaded, setImageUploaded] = useState<boolean>(true);
+  const [disableAdd, setDisableAdd] = useState<boolean>(false);
   const router = useRouter();
 
   const handleSubmit = async () => {
@@ -55,6 +56,8 @@ function AddProject() {
     uploadDoc();
   };
   const uploadImage = async () => {
+    console.log("upload initiated");
+
     if (imageFile) {
       const storageRef = ref(storage, `images/${imageFile?.name + uuidv4()}`);
 
@@ -66,6 +69,7 @@ function AddProject() {
             setData({ ...data, imageLink: url });
             toast.success("Image Uploaded");
             setImageUploaded(true);
+            setDisableAdd(false);
           })
           .catch((error) => {
             // A full list of error codes is available at
@@ -95,17 +99,22 @@ function AddProject() {
         // Sign-out successful.
         console.log("signed out");
         router.push("/login");
+        toast.success("Logged Out");
       })
       .catch((error) => {
         // An error happened.
         console.log("error occurred", error);
+        toast.error("Logout Failed");
       });
   };
 
   return (
     <div>
       <Toaster />
-      <Button onClick={handleSignOut} className="bg-red-500 float-right m-3">
+      <Button
+        onClick={handleSignOut}
+        className="bg-red-500 float-right m-3 rounded-xl dark:hover:bg-red-800"
+      >
         Logout
       </Button>
       <p className="flex justify-center font-semibold text-2xl">
@@ -116,7 +125,7 @@ function AddProject() {
           <p className="">Priority:</p>
           <Input
             type="number"
-            className="w-4/12 "
+            className="w-4/12 rounded-xl"
             value={data.priority || ""}
             onChange={(e) => {
               setData({ ...data, priority: e.target.value });
@@ -127,7 +136,7 @@ function AddProject() {
           <p className="">Enter Project Name:</p>
           <Input
             type="text"
-            className="w-4/12 "
+            className="w-4/12 rounded-xl "
             value={data.projectName || ""}
             onChange={(e) => {
               setData({ ...data, projectName: e.target.value });
@@ -137,7 +146,7 @@ function AddProject() {
         <div className=" flex  justify-center space-x-2 ">
           <p className="">Enter Small description:</p>
           <textarea
-            className="w-4/12 border-2 rounded-md "
+            className="w-4/12 border-2  rounded-xl"
             value={data.smallDescrpition || ""}
             onChange={(e) => {
               setData({ ...data, smallDescrpition: e.target.value });
@@ -147,7 +156,7 @@ function AddProject() {
         <div className=" flex  justify-center space-x-2 ">
           <p className="">Enter Description:</p>
           <textarea
-            className="w-4/12 border-2 rounded-md "
+            className="w-4/12 border-2 rounded-xl "
             value={data.description || ""}
             onChange={(e) => {
               setData({ ...data, description: e.target.value });
@@ -158,7 +167,7 @@ function AddProject() {
           <p className="">Enter Deployed Link:</p>
           <Input
             type="url"
-            className="w-4/12 "
+            className="w-4/12 rounded-xl"
             value={data.deployedLink || ""}
             onChange={(e) => {
               setData({ ...data, deployedLink: e.target.value });
@@ -169,7 +178,7 @@ function AddProject() {
           <p className="">Enter Code Link:</p>
           <Input
             type="url"
-            className="w-4/12 "
+            className="w-4/12 rounded-xl"
             value={data.codeLink || ""}
             onChange={(e) => {
               setData({ ...data, codeLink: e.target.value });
@@ -180,20 +189,34 @@ function AddProject() {
           <p className="">Upload Image:</p>
           <Input
             type="file"
-            className="w-4/12 "
+            className="w-4/12 rounded-xl "
             ref={inputRef}
             onChange={(e) => {
               if (!e.target.files) return;
+              if (e.target.files.length === 0) return;
               setImageFile(e.target.files[0]);
+              console.log(e.target.files);
+              setImageUploaded(false);
+              setDisableAdd(true);
             }}
             accept="image/*"
           />
-          <Button onClick={uploadImage} disabled={imageUploaded}>
+          <Button
+            onClick={uploadImage}
+            disabled={imageUploaded}
+            className="rounded-xl"
+          >
             Upload
           </Button>
         </div>
         <div className="flex justify-center">
-          <Button onClick={handleSubmit}>Add</Button>
+          <Button
+            onClick={handleSubmit}
+            className="rounded-xl m-3"
+            disabled={disableAdd}
+          >
+            Add
+          </Button>
         </div>
       </div>
     </div>

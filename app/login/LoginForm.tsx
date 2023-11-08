@@ -43,33 +43,35 @@ export function InputForm() {
       })
       .catch((error) => {
         console.log(error, "error");
-        toast.error("Login Failed");
-        const errorCode = error.code;
-        const errorMessage = error.message;
+        toast.error("Incorrect Credentials");
       });
   };
 
   return (
     <div className="space-y-3">
-      <div className="w-full">
-        <p>Username</p>
+      <Toaster />
+      <div className="w-full space-y-1">
+        <p>Username:</p>
         <Input
           type="email"
           placeholder="Email"
-          className="w-60"
+          className="w-60 rounded-xl"
           onChange={(e) => setEmail(e.target.value)}
         />
       </div>
-      <div>
-        <p>Password</p>
+      <div className="space-y-1">
+        <p>Password:</p>
         <Input
           type="password"
           placeholder="password"
+          className="rounded-xl"
           onChange={(e) => setPassword(e.target.value)}
         />
       </div>
       <div className="flex justify-center pt-5">
-        <Button onClick={handleSubmit}>Submit</Button>
+        <Button onClick={handleSubmit} className="rounded-xl">
+          Submit
+        </Button>
       </div>
     </div>
   );
