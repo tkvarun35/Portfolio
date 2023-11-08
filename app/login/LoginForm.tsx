@@ -30,6 +30,10 @@ export function InputForm() {
   }, []);
 
   const handleSubmit = () => {
+    if (!email || !password) {
+      toast.error("Please fill all the fields!");
+      return;
+    }
     const auth = getAuth;
     signInWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
@@ -57,6 +61,7 @@ export function InputForm() {
           placeholder="Email"
           className="w-60 rounded-xl"
           onChange={(e) => setEmail(e.target.value)}
+          required
         />
       </div>
       <div className="space-y-1">
@@ -66,6 +71,7 @@ export function InputForm() {
           placeholder="password"
           className="rounded-xl"
           onChange={(e) => setPassword(e.target.value)}
+          required
         />
       </div>
       <div className="flex justify-center pt-5">
