@@ -11,8 +11,14 @@ function Portfolio() {
       <Dashboard />
       <GithubCalender />
       <LinkBar />
+      <br />
+      <br />
+      <br />
+      <hr className="h-px w-10/12 my-8 mx-auto bg-gray-200 border-0 dark:bg-gray-700" />
       <MyProjects />
+      <hr className="h-px w-10/12 my-8 mx-auto bg-gray-200 border-0 dark:bg-gray-700" />
       <AboutMe />
+      <hr className="h-px w-10/12 my-8 mx-auto bg-gray-200 border-0 dark:bg-gray-700" />
       <ContactMe />
     </div>
   );

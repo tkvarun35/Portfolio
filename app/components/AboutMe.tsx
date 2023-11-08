@@ -7,6 +7,9 @@ function AboutMe() {
   const githubUsername = data.githubUsername;
   return (
     <div id="about" className="m-10 pb-10  ">
+      <br />
+      <br />
+      <br />
       <div className="p-10 flex justify-center space-y-0 ">
         <div className={edu_tas.className}>
           <p className="text-3xl font-bold "> About Me</p>
