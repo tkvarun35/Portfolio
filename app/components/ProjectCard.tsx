@@ -66,7 +66,7 @@ function ProjectCard(project: ProjectCardProps) {
             <Image
               src={project.imageLink}
               alt="Image"
-              className=" object-fill  w-full h-36 blur-[0.5px] rounded hover:blur-[1.5px]"
+              className=" object-fill  w-full h-36  rounded hover:blur-[1.5px]"
               width={500}
               height={100}
               quality={75}
