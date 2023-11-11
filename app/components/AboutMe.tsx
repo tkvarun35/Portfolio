@@ -110,7 +110,7 @@ function AboutMe() {
         <div className="max-w-3xl flex justify-center  mx-auto">
           <span className="ps-2">
             <Image
-              src={`https://leetcard.jacoblin.cool/${leetcodeUsername}?ext=heatmap`}
+              src={`https://leetcard.jacoblin.cool/${leetcodeUsername}?ext=heatmap&animation=false`}
               alt="Leetcode Stats"
               width={0}
               height={0}
@@ -130,7 +130,7 @@ function AboutMe() {
         <div className="max-w-3xl flex justify-center  mx-auto">
           <span className="space-y-2 md:flex md:space-x-10">
             <Image
-              src={`https://github-readme-stats.vercel.app/api?username=${githubUsername}&show_icons=true&theme=catppuccin_latte`}
+              src={`https://github-readme-stats.vercel.app/api?username=${githubUsername}&show_icons=true&theme=catppuccin_latte&disable_animations=true`}
               alt="Github Stats"
               width={0}
               height={0}
@@ -139,7 +139,7 @@ function AboutMe() {
               // loading="eager"
             />
             <Image
-              src={`https://github-readme-stats.vercel.app/api/top-langs/?username=${githubUsername}&layout=compact`}
+              src={`https://github-readme-stats.vercel.app/api/top-langs/?username=${githubUsername}&layout=compact&disable_animations=true`}
               alt="Github Lang Stats"
               width={0}
               height={0}
