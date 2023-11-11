@@ -29,7 +29,7 @@ const ThemeToggle = () => {
       checked={resolvedTheme === "dark"}
       onChange={toggleDarkMode}
       size={30}
-      className="bottom-2 fixed right-2 md:bottom-12 md:right-12 text-3xl"
+      className="top-7 fixed z-50  right-4 md:top-auto md:bottom-12 md:right-12 text-3xl"
     />
   );
 };

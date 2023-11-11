@@ -1,7 +1,8 @@
 import Link from "next/link";
 import Image from "next/image";
 import Logo from "@/public/giphy.gif";
-import { exo_2 } from "../fonts/fonts";
+import { edu_tas, exo_2 } from "../fonts/fonts";
+import data from "@/Details.json";
 
 function Navbar() {
   const NavOptions = [
@@ -24,7 +25,7 @@ function Navbar() {
 
   return (
     <nav className="bg-white dark:bg-[#121212] border-gray-200 w-full sticky top-0 z-50">
-      <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+      <div className="max-w-screen-xl flex flex-wrap items-center md:justify-between  mx-auto p-4">
         <Link
           href="/"
           className="hover:underline hover:text-red-950 cursor-default"
@@ -54,6 +55,13 @@ function Navbar() {
                 </Link>
               ))}
             </ul>
+          </div>
+          <div
+            className={`${edu_tas.className} md:hidden pl-1  flex justify-items-center text-xl`}
+          >
+            <Link href="/">
+              <h1>{data.nickName}</h1>
+            </Link>
           </div>
         </div>
       </div>
