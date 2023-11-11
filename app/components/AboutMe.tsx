@@ -101,55 +101,59 @@ function AboutMe() {
         </div>
       </div>
 
-      <div className="pb-4">
-        <div className="px-10 pt-10 pb-5 flex justify-center md:justify-normal space-y-0 ">
-          <div className={satisfya.className}>
-            <p className="text-2xl font-semibold px-72"> My LeetCode Stats</p>
+      {leetcodeUsername && (
+        <div className="pb-4">
+          <div className="px-10 pt-10 pb-5 flex justify-center md:justify-normal space-y-0 ">
+            <div className={satisfya.className}>
+              <p className="text-2xl font-semibold px-72"> My LeetCode Stats</p>
+            </div>
+          </div>
+          <div className="max-w-3xl flex justify-center  mx-auto">
+            <span className="ps-2">
+              <Image
+                src={`https://leetcard.jacoblin.cool/${leetcodeUsername}?ext=heatmap&animation=false`}
+                alt="Leetcode Stats"
+                width={0}
+                height={0}
+                className="rounded-2xl"
+                style={{ width: "100%", height: "auto" }}
+                // loading="eager"
+              />
+            </span>
           </div>
         </div>
-        <div className="max-w-3xl flex justify-center  mx-auto">
-          <span className="ps-2">
-            <Image
-              src={`https://leetcard.jacoblin.cool/${leetcodeUsername}?ext=heatmap&animation=false`}
-              alt="Leetcode Stats"
-              width={0}
-              height={0}
-              className="rounded-2xl"
-              style={{ width: "100%", height: "auto" }}
-              // loading="eager"
-            />
-          </span>
-        </div>
-      </div>
-      <div className="pb-4">
-        <div className="px-10 pt-10 pb-5 flex justify-center md:justify-normal space-y-0 ">
-          <div className={satisfya.className}>
-            <p className="text-2xl font-semibold px-72"> My Github Stats</p>
+      )}
+      {githubUsername && (
+        <div className="pb-4">
+          <div className="px-10 pt-10 pb-5 flex justify-center md:justify-normal space-y-0 ">
+            <div className={satisfya.className}>
+              <p className="text-2xl font-semibold px-72"> My Github Stats</p>
+            </div>
+          </div>
+          <div className="max-w-3xl flex justify-center  mx-auto">
+            <span className="space-y-2 md:flex md:space-x-10">
+              <Image
+                src={`https://github-readme-stats.vercel.app/api?username=${githubUsername}&show_icons=true&theme=catppuccin_latte&disable_animations=true`}
+                alt="Github Stats"
+                width={0}
+                height={0}
+                className="rounded-2xl"
+                style={{ width: "100%", height: "auto" }}
+                // loading="eager"
+              />
+              <Image
+                src={`https://github-readme-stats.vercel.app/api/top-langs/?username=${githubUsername}&layout=compact&disable_animations=true`}
+                alt="Github Lang Stats"
+                width={0}
+                height={0}
+                style={{ width: "100%", height: "auto" }}
+                className="rounded-2xl"
+                // loading="eager"
+              />
+            </span>
           </div>
         </div>
-        <div className="max-w-3xl flex justify-center  mx-auto">
-          <span className="space-y-2 md:flex md:space-x-10">
-            <Image
-              src={`https://github-readme-stats.vercel.app/api?username=${githubUsername}&show_icons=true&theme=catppuccin_latte&disable_animations=true`}
-              alt="Github Stats"
-              width={0}
-              height={0}
-              className="rounded-2xl"
-              style={{ width: "100%", height: "auto" }}
-              // loading="eager"
-            />
-            <Image
-              src={`https://github-readme-stats.vercel.app/api/top-langs/?username=${githubUsername}&layout=compact&disable_animations=true`}
-              alt="Github Lang Stats"
-              width={0}
-              height={0}
-              style={{ width: "100%", height: "auto" }}
-              className="rounded-2xl"
-              // loading="eager"
-            />
-          </span>
-        </div>
-      </div>
+      )}
     </div>
   );
 }

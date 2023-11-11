@@ -1,5 +1,6 @@
 import Image from "next/image";
 import SVG from "@/public/404.svg";
+import Link from "next/link";
 
 export default function NotFound() {
   return (
@@ -16,12 +17,12 @@ export default function NotFound() {
               homepage.
             </p>
 
-            <a href="/">
+            <Link href="/">
               {" "}
               <button className="px-4 inline py-2 text-sm font-medium leading-5 shadow text-white transition-colors duration-150 border border-transparent rounded-xl focus:outline-none focus:shadow-outline-blue bg-blue-600 active:bg-blue-600 hover:bg-blue-700">
                 Back to homepage
               </button>
-            </a>
+            </Link>
           </div>
           <div className="max-w-lg">
             <Image src={SVG} alt="404Svg" />

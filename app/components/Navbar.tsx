@@ -59,9 +59,11 @@ function Navbar() {
           <div
             className={`${edu_tas.className} md:hidden pl-1  flex justify-items-center text-xl`}
           >
-            <Link href="/">
-              <h1>{data.nickName}</h1>
-            </Link>
+            {data.nickName && (
+              <Link href="/">
+                <h1>{data.nickName}</h1>
+              </Link>
+            )}
           </div>
         </div>
       </div>

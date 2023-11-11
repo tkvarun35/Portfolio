@@ -193,7 +193,11 @@ function AddProject() {
             ref={inputRef}
             onChange={(e) => {
               if (!e.target.files) return;
-              if (e.target.files.length === 0) return;
+              if (e.target.files.length === 0) {
+                setDisableAdd(false);
+                setImageUploaded(true);
+                return;
+              }
               setImageFile(e.target.files[0]);
               console.log(e.target.files);
               setImageUploaded(false);
