@@ -9,15 +9,15 @@ const ThemeToggle = () => {
   const toggleDarkMode = () => {
     setTheme(resolvedTheme === "dark" ? "light" : "dark");
   };
-  const toggleDarkModeTwice = () => {
-    console.log("runned");
+  // const toggleDarkModeTwice = () => {
+  //   console.log("runned");
 
-    setTheme(resolvedTheme === "dark" ? "dark" : "light");
-  };
+  //   setTheme(resolvedTheme === "dark" ? "dark" : "light");
+  // };
 
   useEffect(() => {
     setMounted(true);
-    toggleDarkModeTwice();
+    // toggleDarkModeTwice();
   }, []);
   if (!mounted) {
     return null;
