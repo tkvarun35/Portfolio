@@ -17,7 +17,7 @@ const ThemeToggle = () => {
 
   useEffect(() => {
     setMounted(true);
-    // toggleDarkModeTwice();
+    toggleDarkModeTwice();
   }, []);
   if (!mounted) {
     return null;

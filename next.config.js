@@ -8,7 +8,7 @@ const nextConfig = {
       "github-readme-stats.vercel.app",
     ],
   },
-  swcMinify: false,
+  // swcMinify: false,
 };
 
 module.exports = nextConfig;
