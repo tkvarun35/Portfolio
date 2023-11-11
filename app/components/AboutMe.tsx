@@ -116,6 +116,7 @@ function AboutMe() {
               height={0}
               className="rounded-2xl"
               style={{ width: "100%", height: "auto" }}
+              // loading="eager"
             />
           </span>
         </div>
@@ -135,6 +136,7 @@ function AboutMe() {
               height={0}
               className="rounded-2xl"
               style={{ width: "100%", height: "auto" }}
+              // loading="eager"
             />
             <Image
               src={`https://github-readme-stats.vercel.app/api/top-langs/?username=${githubUsername}&layout=compact`}
@@ -143,6 +145,7 @@ function AboutMe() {
               height={0}
               style={{ width: "100%", height: "auto" }}
               className="rounded-2xl"
+              // loading="eager"
             />
           </span>
         </div>

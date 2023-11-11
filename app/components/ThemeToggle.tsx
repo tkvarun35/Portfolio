@@ -1,28 +1,32 @@
 "use client";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useLayoutEffect, useState } from "react";
 import { useTheme } from "next-themes";
 import { DarkModeSwitch } from "react-toggle-dark-mode";
 
 const ThemeToggle = () => {
   const { resolvedTheme, systemTheme, theme, setTheme } = useTheme();
-  const [isDark, setIsDark] = useState(resolvedTheme === "dark");
   const [mounted, setMounted] = useState(false);
+  const toggleDarkMode = () => {
+    setTheme(resolvedTheme === "dark" ? "light" : "dark");
+  };
+  const toggleDarkModeTwice = () => {
+    console.log("runned");
+
+    setTheme(resolvedTheme === "dark" ? "dark" : "light");
+  };
+
   useEffect(() => {
     setMounted(true);
+    // toggleDarkModeTwice();
   }, []);
   if (!mounted) {
     return null;
   }
-  const currentTheme = theme === "system" ? systemTheme : theme;
-  const toggleDarkMode = () => {
-    setTheme(resolvedTheme === "dark" ? "light" : "dark");
-    setIsDark(resolvedTheme !== "dark");
-  };
 
   return (
     <DarkModeSwitch
       style={{ marginBottom: "2rem" }}
-      checked={isDark}
+      checked={resolvedTheme === "dark"}
       onChange={toggleDarkMode}
       size={30}
       className="bottom-2 fixed right-2 md:bottom-12 md:right-12 text-3xl"
