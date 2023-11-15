@@ -154,6 +154,7 @@ function AboutMe() {
           </div>
         </div>
       )}
+      <hr className="h-px w-10/12 my-8 mx-auto bg-gray-200 border-0 dark:bg-gray-700" />
     </div>
   );
 }
