@@ -1,7 +1,7 @@
 "use client";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { useEffect, useRef, useState } from "react";
+import { useRef, useState } from "react";
 import { getDownloadURL, ref, uploadBytes } from "firebase/storage";
 import { storage, db, getAuth } from "@/firebase/config";
 import { addDoc, collection } from "firebase/firestore";
@@ -47,13 +47,24 @@ function AddProject() {
 
           inputRef.current!.value = "";
 
-          setImageUploaded(false);
+          setImageUploaded(true);
         })
         .catch((e) => {
           toast.error("Upload Failed");
         });
     };
-    uploadDoc();
+    if (
+      data.projectName !== undefined &&
+      data.smallDescrpition !== undefined &&
+      data.priority != undefined &&
+      data.projectName !== "" &&
+      data.smallDescrpition !== "" &&
+      data.priority != ""
+    ) {
+      uploadDoc();
+    } else {
+      toast.error("Fill required fields!");
+    }
   };
   const uploadImage = async () => {
     console.log("upload initiated");
