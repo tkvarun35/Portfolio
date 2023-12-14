@@ -1,6 +1,4 @@
-import { Caveat, Satisfy } from "next/font/google";
-import { Exo_2 } from "next/font/google";
-import { Edu_TAS_Beginner } from "next/font/google";
+import { Caveat, Satisfy,Exo_2,Edu_TAS_Beginner } from "next/font/google";
 
 export const caveat = Caveat({
     subsets: ['latin'],
