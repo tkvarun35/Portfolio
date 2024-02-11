@@ -3,6 +3,7 @@ import Image from "next/image";
 import Logo from "@/public/giphy.gif";
 import { edu_tas, exo_2 } from "../fonts/fonts";
 import data from "@/Details.json";
+import Resume from "./Resume";
 
 function Navbar() {
   const NavOptions = [
@@ -54,6 +55,7 @@ function Navbar() {
                   {item.name}
                 </Link>
               ))}
+              <Resume />
             </ul>
           </div>
           <div
