@@ -4,7 +4,7 @@ import data from "@/Details.json";
 function Resume() {
   return (
     <Dialog>
-      <DialogTrigger className="hover:underline hover:text-red-950 dark:hover:text-red-200">
+      <DialogTrigger className="md:hover:underline md:hover:text-red-950 md:dark:hover:text-red-200">
         Resume
       </DialogTrigger>
       <DialogContent>
