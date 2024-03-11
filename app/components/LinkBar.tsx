@@ -39,9 +39,7 @@ function LinkBar() {
       <div className="space-y-4 md:space-y-0 md:space-x-5 pt-10 flex flex-col md:flex-row justify-center">
         <div className="flex justify-center">
           <div className="flex justify-center md:hidden rounded-xl bg-[#334155] w-32 h-10 p-1 dark:hover:bg-slate-800 text-white">
-            {/* <div className="w-32 h-10 rounded-xl bg-[#334155]  text-center "> */}
             <SiGoogledocs className="m-2 " /> <Resume />
-            {/* </div> */}
           </div>
         </div>
         {Links["Github"].link && (
