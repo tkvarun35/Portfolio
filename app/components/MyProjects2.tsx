@@ -4,7 +4,7 @@ import { collection, getDocs, orderBy, query } from "firebase/firestore";
 import { useEffect, useState, useCallback } from "react";
 import ProjectCard from "./ProjectCard";
 
-import { FaAngleLeft, FaAngleRight } from "react-icons/fa";
+import { FaChevronLeft, FaChevronRight } from "react-icons/fa6";
 
 import useEmblaCarousel from "embla-carousel-react";
 import { EmblaOptionsType } from 'embla-carousel';
@@ -34,7 +34,7 @@ interface ProjectProps {
 function EnhancedProjectSlideshow() {
     const projectsCollectionRef = collection(db, "Project");
     //@ts-ignore
-    const [projects, setProjects] = useState<[ProjectProps]>([]);
+    const [projects, setProjects] = useState<[ProjectProps]>();
 
     useEffect(() => {
 
@@ -93,14 +93,14 @@ function EnhancedProjectSlideshow() {
                             onClick={scrollPrev}
                             className="absolute left-4 md:-left-10 top-1/2 -translate-y-1/2 bg-white rounded-full p-2 shadow-md  "
                         >
-                            <FaAngleLeft className="w-6 h-6 " />
+                            <FaChevronLeft className="w-6 h-6 " />
                         </button>
                         <button
                             onClick={scrollNext}
                             className="absolute right-4 md:-right-10 top-1/2 -translate-y-1/2 bg-white rounded-full p-2 shadow-md  "
                         >
 
-                            <FaAngleRight className="w-6 h-6" />
+                            <FaChevronRight className="w-6 h-6" />
                         </button>
 
                     </div>
