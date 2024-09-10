@@ -6,7 +6,8 @@ import ProjectCard from "./ProjectCard";
 
 import { FaAngleLeft, FaAngleRight } from "react-icons/fa";
 
-import useEmblaCarousel, { EmblaOptionsType } from "embla-carousel-react"
+import useEmblaCarousel from "embla-carousel-react";
+import { EmblaOptionsType} from 'embla-carousel';
 import AutoPlay from "embla-carousel-autoplay"
 import { db } from "@/firebase/config";
 import { edu_tas } from "../fonts/fonts";
