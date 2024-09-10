@@ -133,7 +133,7 @@ function AboutMe() {
           <div className="max-w-3xl flex justify-center  mx-auto">
             <span className="space-y-2 md:flex md:space-x-10">
               <Image
-                src={`https://github-readme-stats.vercel.app/api?username=${githubUsername}&show_icons=true&theme=catppuccin_latte&disable_animations=true`}
+                src={`https://github-readme-stats.vercel.app/api?username=${githubUsername}&show_icons=true&theme=catppuccin_latte`}
                 alt="Github Stats"
                 width={0}
                 height={0}
@@ -142,7 +142,7 @@ function AboutMe() {
                 // loading="eager"
               />
               <Image
-                src={`https://github-readme-stats.vercel.app/api/top-langs/?username=${githubUsername}&layout=compact&disable_animations=true`}
+                src={`https://github-readme-stats.vercel.app/api/top-langs/?username=${githubUsername}&layout=compact`}
                 alt="Github Lang Stats"
                 width={0}
                 height={0}
