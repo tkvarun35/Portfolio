@@ -55,8 +55,8 @@ function ProjectCard(project: ProjectCardProps) {
     ref,
   });
   return (
-    <div className="flex  justify-center p-3 md:w-4/12 ">
-      <Card className="flex flex-col rounded-xl dark:border-[0.1px]">
+    <div className="flex  justify-center m-6 md:w-full">
+      <Card className="flex flex-col rounded-xl dark:border-[0.1px] w-96">
         {project.imageLink && (
           <Link
             href={project.deployedLink || project.codeLink || ""}
@@ -70,7 +70,7 @@ function ProjectCard(project: ProjectCardProps) {
               width={500}
               height={100}
               quality={75}
-              priority={true}
+              loading="lazy"
             />
             <HiExternalLink className=" absolute top-0 right-0 z-10  hidden group-hover:block text-3xl text-slate-800 bg-slate-300	rounded p-1" />
           </Link>

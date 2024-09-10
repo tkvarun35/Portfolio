@@ -4,6 +4,7 @@ import Dashboard from "../components/Dashboard";
 import GithubCalender from "../components/GithubCalender";
 import LinkBar from "../components/LinkBar";
 import MyProjects from "../components/MyProjects";
+import EnhancedProjectSlideshow from "../components/MyProjects2"
 
 function Portfolio() {
   return (
@@ -11,7 +12,8 @@ function Portfolio() {
       <Dashboard />
       <GithubCalender />
       <LinkBar />
-      <MyProjects />
+      {/* <MyProjects /> */}
+      <EnhancedProjectSlideshow/>
       <AboutMe />
       <ContactMe />
     </div>
