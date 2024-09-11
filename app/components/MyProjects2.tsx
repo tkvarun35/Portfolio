@@ -91,13 +91,13 @@ function EnhancedProjectSlideshow() {
                         </div>
                         <button
                             onClick={scrollPrev}
-                            className="absolute left-4 md:-left-10 top-1/2 -translate-y-1/2 bg-white rounded-full p-2 shadow-md  "
+                            className="absolute left-4 md:-left-10 top-1/2 -translate-y-1/2 bg-white dark:bg-transparent rounded-full p-2 shadow-md  "
                         >
-                            <FaChevronLeft className="w-6 h-6 " />
+                            <FaChevronLeft className="w-6 h-6" />
                         </button>
                         <button
                             onClick={scrollNext}
-                            className="absolute right-4 md:-right-10 top-1/2 -translate-y-1/2 bg-white rounded-full p-2 shadow-md  "
+                            className="absolute right-4 md:-right-10 top-1/2 -translate-y-1/2 bg-white dark:bg-transparent rounded-full p-2 shadow-md  "
                         >
 
                             <FaChevronRight className="w-6 h-6" />
